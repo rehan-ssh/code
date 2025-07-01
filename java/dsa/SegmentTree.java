@@ -6,6 +6,14 @@ public class SegmentTree {
 
     public SegmentTree(int[] arr) {
         n = arr.length;
+        /*
+The formula comes from the fact that a segment tree is a full binary tree. We first
+pad the array to the next power of 2, say N = 2^ceil (log2 (n) ) . A full binary tree
+with N leaves has 2N - 1 nodes, including internal and leaf nodes. Substituting
+N gives us 2 x 2^ceil (log2 (n)) - 1, which is the maximum number of nodes
+needed. Since 2^ceil (log2(n)) ≤ 2n, we use 4n as a safe upper bound for
+space.
+         */
         // because a 10 size tree will require 16 spaces i.e power of 2
         tree = new int[4 * n]; // Safe size to hold all segments
         build(arr, 0, 0, n - 1);
@@ -39,7 +47,7 @@ public class SegmentTree {
         return left + right;
         // at any level only max two nodes will be partial as range is continuous
         // other nodes will be completely in or out
-        // hence complexity of this query function is O(n)
+        // hence complexity of this query function is O(logn)
     }
 
     public void update(int index, int value) {

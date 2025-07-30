@@ -27,6 +27,7 @@ public class CoinChange {
     }
 
     int dp(int[] coins, int target) {
+        int n = coins.length;
         int[] dp = new int[target + 1];
 
         for (int i = 0; i <= target; i++)

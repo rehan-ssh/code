@@ -38,17 +38,17 @@ public class LCS {
             dp = curr;
         }
 
-        return dp[m]; 
+        return dp[m];
     }
 
     // Main method to test the LCS function
     public static void main(String[] args) {
-        LCS lcsSolver = new LCS();
-
+        // write the test cases here
+        LCS lcs = new LCS();
         String s1 = "abcde";
         String s2 = "ace";
-
-        int lcsLength = lcsSolver.longestCommonSubsequence(s1, s2);
-        System.out.println("LCS length: " + lcsLength); // Output should be 3
+        int result = lcs.longestCommonSubsequence(s1, s2);
+        System.out.println("Length of LCS: " + result); // Expected output: 3
+        // Explanation: The LCS of "abcde" and "ace" is "ace", which has length 3.
     }
 }

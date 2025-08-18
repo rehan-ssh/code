@@ -1,4 +1,4 @@
-package com.github.dsa.DP.Partitions;
+package com.github.dsa.DP.Squares;
 
 import java.util.ArrayDeque;
 

@@ -1,8 +1,8 @@
 package com.github.dsa.Tree;
 
 public class TreeNode {
-    int val;
-    TreeNode left, right;
+    public int val;
+    public TreeNode left, right;
 
     public TreeNode(int val) {
         this.val = val;

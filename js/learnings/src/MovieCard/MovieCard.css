@@ -1,0 +1,24 @@
+.movie-card {
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+.movie-card-image img{
+    width: 300px;
+    height: 200px;
+}
+
+.movie-card-content {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}

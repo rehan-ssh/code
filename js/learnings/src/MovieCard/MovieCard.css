@@ -4,7 +4,7 @@
     position: relative;
 }
 
-.movie-card-image img{
+.movie-card-image img {
     width: 300px;
     height: 200px;
 }
@@ -21,4 +21,44 @@
     align-items: center;
     justify-content: center;
     transform: translate(-50%, -50%);
+}
+
+.movie-card-actions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+        color: white;
+        text-decoration: none;
+        background-color: blue;
+        padding: 5px;
+        border-radius: 10000000000000px;
+        margin-bottom: 5px;
+    }
+
+}
+
+
+.movie-card-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateX(-50%);
+    padding: 0px 10px;
+
+    button {
+        color: white;
+        cursor: pointer;
+        background-color: red;
+        border: none;
+        border-radius: 3px;
+        padding: 5px;
+        font-weight: bold;
+    }
+
 }

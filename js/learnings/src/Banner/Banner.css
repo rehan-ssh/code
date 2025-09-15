@@ -1,0 +1,28 @@
+.banner {
+    position: relative;
+    color: white;
+}
+
+.film-poster {
+    img {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+}
+
+.film-details {
+    padding: 20px;
+    color: black;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+
+
+}

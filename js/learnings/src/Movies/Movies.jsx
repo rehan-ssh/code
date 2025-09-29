@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import MovieCard from '../MovieCard';
 import "./Movies.css";
 import Pagination from '../Pagination';
+import { memo } from 'react';
 
-function Movies({ watchList, addToWatchList, removeFromWatchList }) {
+function Movies() {
     const [movies, setMovies] = useState([]);
     const [pageNo, setPageNo] = useState(1);
 
@@ -31,7 +32,7 @@ function Movies({ watchList, addToWatchList, removeFromWatchList }) {
             <h1>Trending Movies</h1>
             <div className="movies-container">
                 {movies.map(movie => (
-                    <MovieCard key={movie.id} movie={movie} watchList={watchList} addToWatchList={addToWatchList} removeFromWatchList={removeFromWatchList} />
+                    <MovieCard key={movie.id} movie={movie} />
                 ))}
             </div>
             <Pagination pageNumber={pageNo}
@@ -42,4 +43,4 @@ function Movies({ watchList, addToWatchList, removeFromWatchList }) {
 }
 
 
-export default Movies;
+export default memo(Movies);

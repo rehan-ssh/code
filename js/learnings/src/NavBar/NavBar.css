@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.navbar-item {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar-item:hover {
+    color: #FF0000;
+}
+
+.navbar-logo {
+    width: 50px;
+    height: 100px;
+}

@@ -1,8 +1,16 @@
 import "./MovieCard.css";
 
 import { Link } from "react-router-dom";
+import { MovieContext } from "../Context/MovieContext";
+import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-function MovieCard({ movie, watchList, addToWatchList, removeFromWatchList }) {
+function MovieCard({ movie }) {
+
+    const dispatch = useDispatch();
+    const watchList = useSelector(state => state.watchList);
+
+    // const { watchList, addToWatchList, removeFromWatchList } = useContext(MovieContext);
 
     const baseUrl = "https://image.tmdb.org/t/p/original";
     const posterUrl = `${baseUrl}${movie.backdrop_path}`;
@@ -11,6 +19,17 @@ function MovieCard({ movie, watchList, addToWatchList, removeFromWatchList }) {
         return watchList.includes(movie.id);
     }
 
+    function handleAddToWatchList() {
+        // removeFromWatchList(movie)
+        dispatch({ type: 'ADD_TO_WATCHLIST', payload: movie });
+    }
+
+    function handleRemoveFromWatchList() {
+        // addToWatchList(movie)
+        console.log("movie", watchList);
+
+        dispatch({ type: 'REMOVE_FROM_WATCHLIST', payload: movie });
+    }
 
     return (
         <div className="movie-card" >
@@ -28,9 +47,9 @@ function MovieCard({ movie, watchList, addToWatchList, removeFromWatchList }) {
                     <Link to={`/details/${movie.id}`}>i</Link>
                 </div>
                 {doesContain() ? (
-                    <button onClick={() => removeFromWatchList(movie)}>Remove from Watchlist</button>
+                    <button onClick={handleRemoveFromWatchList}>Remove from Watchlist</button>
                 ) : (
-                    <button onClick={() => addToWatchList(movie)}>Add to Watchlist</button>
+                    <button onClick={handleAddToWatchList}>Add to Watchlist</button>
                 )}
 
             </div>
